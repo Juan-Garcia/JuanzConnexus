@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>Juanzconnexus</servlet-name>
+		<servlet-class>juanzconnexus.JuanzconnexusServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Juanzconnexus</servlet-name>
+		<url-pattern>/juanzconnexus</url-pattern>
+	</servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>juanzconnexus.jsp</welcome-file>
+	</welcome-file-list>
+
+		<servlet>
+		<servlet-name>css</servlet-name>
+		<servlet-class>juanzconnexus.CreateStreamServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>css</servlet-name>
+		<url-pattern>/createStreamServlet</url-pattern>
+	</servlet-mapping>
+
+<!--  	<servlet>
+		<servlet-name>Upload</servlet-name>
+		<servlet-class>juanzconnexus.Upload</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Serve</servlet-name>
+		<servlet-class>juanzconnexus.Serve</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Upload</servlet-name>
+		<url-pattern>/upload</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Serve</servlet-name>
+		<url-pattern>/serve</url-pattern>
+	</servlet-mapping>
+-->		
+		
+	<filter>
+		<filter-name>ObjectifyFilter</filter-name>
+		<filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>ObjectifyFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+</web-app>
